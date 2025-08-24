@@ -116,6 +116,16 @@ end
 ```
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 ```
+### Menu a tendina
+
+```HTML
+<label for="scelta">Scegli un'opzione:</label>
+<select id="scelta" name="scelta">
+  <option value="valore1">Opzione 1</option>
+  <option value="valore2">Opzione 2</option>
+  <option value="valore3">Opzione 3</option>
+</select>
+```
 
 ```
 The final element.
