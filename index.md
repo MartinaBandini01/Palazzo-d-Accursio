@@ -1,5 +1,13 @@
 
 ---
+### Menu a tendina
+
+<label for="scelta">Scegli un'opzione:</label>
+<select id="scelta" name="scelta">
+  <option value="valore1">Opzione 1</option>
+  <option value="valore2">Opzione 2</option>
+  <option value="valore3">Opzione 3</option>
+</select>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
