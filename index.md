@@ -9,6 +9,21 @@
   <option value="valore3">Opzione 3</option>
 </select>
 
+<a href="SPARQL queries.html">SPARQL queries</a>
+<nav class="dropdown-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="#">Prodotti</a>
+      <ul class="dropdown-content">
+        <li><a href="categoria1.html">Categoria 1</a></li>
+        <li><a href="categoria2.html">Categoria 2</a></li>
+      </ul>
+    </li>
+    <li><a href="SPARQL queries.html">SPARQL queries</a></li>
+  </ul>
+</nav>
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
