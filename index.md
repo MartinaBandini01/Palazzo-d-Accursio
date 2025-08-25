@@ -1,5 +1,6 @@
 
 ---
+ <body>
 <nav class="dropdown-menu">
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -13,6 +14,7 @@
     <li><a href="about.html">Chi siamo</a></li>
   </ul>
 </nav>
+ </body>
 
 <h1>Benvenuto nel mio sito</h1>
 <p>Questo è un esempio di pagina con un menu a discesa in alto a destra.</p>
