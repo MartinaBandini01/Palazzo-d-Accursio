@@ -1,15 +1,5 @@
 
 ---
-### Menu a tendina
-
-<label for="scelta">Scegli un'opzione:</label>
-<select id="scelta" name="scelta">
-  <option value="valore1">Opzione 1</option>
-  <option value="valore2">Opzione 2</option>
-  <option value="valore3">Opzione 3</option>
-</select>
-
-<a href="SPARQL queries.html">SPARQL queries</a>
 <nav class="dropdown-menu">
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -20,9 +10,12 @@
         <li><a href="categoria2.html">Categoria 2</a></li>
       </ul>
     </li>
-    <li><a href="SPARQL queries.html">SPARQL queries</a></li>
+    <li><a href="about.html">Chi siamo</a></li>
   </ul>
 </nav>
+
+<h1>Benvenuto nel mio sito</h1>
+<p>Questo è un esempio di pagina con un menu a discesa in alto a destra.</p>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
