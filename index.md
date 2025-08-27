@@ -1,20 +1,5 @@
 
 ---
- <body>
-<nav class="dropdown-menu">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li class="dropdown">
-      <a href="#">Prodotti</a>
-      <ul class="dropdown-content">
-        <li><a href="categoria1.html">Categoria 1</a></li>
-        <li><a href="categoria2.html">Categoria 2</a></li>
-      </ul>
-    </li>
-    <li><a href="about.html">Chi siamo</a></li>
-  </ul>
-</nav>
- </body>
 
 <h1>Benvenuto nel mio sito</h1>
 <p>Questo è un esempio di pagina con un menu a discesa in alto a destra.</p>
