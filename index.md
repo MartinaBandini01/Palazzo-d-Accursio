@@ -1,6 +1,17 @@
 
 ---
+<!DOCTYPE html>
+<html lang="en">
 
+  <div style="text-align: center; margin-top: 20px;">
+<nav>
+    <h3>Sections:</h3>
+  <a href="theproject.html">The Project</a> |
+  <a href="methodology.html">Methodology</a> |
+  <a href="theprocess.html">The Process</a> |
+  <a href="conclusions.html">Conclusions</a>
+  </nav>
+    
 <h1>Benvenuto nel mio sito</h1>
 <p>Questo è un esempio di pagina con un menu a discesa in alto a destra.</p>
 
