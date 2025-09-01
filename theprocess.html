@@ -29,7 +29,6 @@ title: La mia pagina
     <a href="index.md">Homepage</a> |
     <a href="theproject.html">The Project</a> |
     <a href="methodology.html">Methodology</a> |
-    <a href="theprocess.html">The Process</a> |
     <a href="conclusions.html">Conclusions</a>
   </nav>
 </body>
@@ -39,14 +38,13 @@ title: La mia pagina
 <br>
 <h1 style="text-align: center;">THE PROCESS</h1>
 <br>
-
 <p>We noticed that the ArCo entry for Palazzo d’Accursio is missing many details about the artistic heritage found in its various rooms. 
 To begin enriching this information, we focused on the presence of frescoes within the palace. 
 For this task, we employed large language models (LLMs), using a few-shot chain-of-thought prompting approach to identify and retrieve relevant content.</p>
 <br>
 <br>
 <h3 style="text-align: center;"> FEW-SHOT CHAIN-OF-THOUGHT PROMPTING TECHNIQUE </h3>
-
+<be></be>
 <p>I will give you some examples of Italian palaces, followed by the year in which they were built and a few examples of the main frescoes present inside them. <br>
 <br>
 Ex. 1:  <br>
@@ -129,6 +127,21 @@ we wanted the answer to be. Gemini in this case is more accurate because it is t
             border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
             object-fit:contain; max-height:400px;">
 <br>
+<p>The result of this query is false: there is no connection between Palazzo d'Accursio and any fresco</p>
+<p>Since in ArCo there is no reference to any of these important frescoes of the Palazzo d’Accursio,
+we decided to propose to add at least the most famous one. So we wrote a question to ChatGpt employing a zero-shot prompting technique: </p>
+<br>
+<p>What is the most important fresco in Palazzo d'Accursio?</p> 
+<br>
+<h3 style="text-align: center;">CHAT GPT</h3>
+<br>
+<img src="assets/images/Most important fresco.png" alt="Most important fresco"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
+<p>The following answer is wrong, because the cycles of frescoes by <a href="https://www.elledecor.com/it/viaggi/a40225106/palazzo-daccursio-lo-storico-edificio-che-domina-piazza-maggiore/">
+Prospero Fontana</a> are located in the Chapel, not in the Sala Farnese. So the information had to be manually corrected to avoid the mistake.</p>
 
 
 
