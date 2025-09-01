@@ -170,7 +170,14 @@ In the RDF triple I would like to have a descriptive label with the following de
             border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
             object-fit:contain; max-height:400px;">
 <br>
-
+<h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
+<br>
+<p>The first triple, proposed by <strong>Chatgpt</strong>, states that the building has a distinct physical object (DecorativeApparatus) identified by a URI. 
+It creates a distinct resource for the fresco and linking it via core:hasPart.<br>
+The second model, stated by <strong>Mistral</strong>, uses a blank node ([...]) instead of a URI to represent the decorative apparatus. 
+Conceptually, it is very similar to the first case, but it does not assign a persistent identifier to the fresco: we cannot easily reuse or link this resource elsewhere. <br>
+In <strong>Gemini’s</strong> model there is no longer a separate “fresco” resource. The building is directly linked to the type of decorative apparatus (fresco) via a property 
+(hasInternalDecorativeApparatusOrDecorativeCycle). However, this property is not part of the standard ArCo ontology, suggesting a looser interpretation or hallucination.</p>
 
 
 
