@@ -108,33 +108,19 @@ we wanted the answer to be. Gemini in this case is more accurate because it is t
 <br>
 <p>After knowing the existence of frescoes within the Palazzo d’Accursio, we asked ArCo SPARQL endpoint to retrieve the IRI of  “affresco”:</p> 
 <br>
-<p>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> <br>
-SELECT DISTINCT ?s ?label <br>
-WHERE { <br>
-?s rdfs:label ?label . <br>
-FILTER(REGEX(?label, "affresco", "i")) <br>
-} <br>
-ORDER BY ?label <br>
-LIMIT 10 </p>
+<img src="assets/images/sparql affresco.png" alt="sparql affresco.png"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
 <br>
 <p>IRI: <a href="https://dati.beniculturali.it/lodview-arco/resource/DecorativeApparatusType/1100389968affresco.html">https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco</a></p>
 <br>
 <p>We now have all the necessary information to query ArCo in order to verify whether a link already exists between Palazzo d’Accursio and any fresco. </p>
 <br>
-<p>PREFIX arco-dd: <https://w3id.org/arco/ontology/denotative-description> <br>
-ASK { <br>
-{ <br>
-<https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco> <br>
-arco-dd:isDecorativeApparatusTypeOf <br>
-<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039> . <br>
-} <br>
-UNION <br>
-{ <br>
-<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039> <br>
-arco-dd:hasDecorativeApparatusType <br>
-<https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco> . <br>
-} <br>
-} <br>
+<img src="assets/images/Palazzo e affresco.png" alt="Palazzo e affresco.png"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
 <br>
 <p>We employed the predicate "arco-dd:hasDecorativeApparatusType" following the ArCo ontology:</p>
 <br>
