@@ -118,6 +118,23 @@ ORDER BY ?label <br>
 LIMIT 10 </p>
 <br>
 <p>IRI: <a href="https://dati.beniculturali.it/lodview-arco/resource/DecorativeApparatusType/1100389968affresco.html">https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco</a></p>
+<br>
+<p>We now have all the necessary information to query ArCo in order to verify whether a link already exists between Palazzo d’Accursio and any fresco. </p>
+<br>
+<p>PREFIX arco-dd: <https://w3id.org/arco/ontology/denotative-description> <br>
+ASK { <br>
+{ <br>
+<https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco> <br>
+arco-dd:isDecorativeApparatusTypeOf <br>
+<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039> . <br>
+} <br>
+UNION <br>
+{ <br>
+<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039> <br>
+arco-dd:hasDecorativeApparatusType <br>
+<https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco> . <br>
+} <br>
+} <br>
 
 
 
