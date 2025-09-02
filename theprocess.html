@@ -80,22 +80,23 @@ LIMIT 10</p>
 <p>The result is https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385. </p>
 <p> Then, with an ASK query, the knowledge graph was asked whether a hall named sala Urbana was part of palazzo d’Accursio. The Boolean value as a result is false, meaning that Sala Urbana is not present as a part of palazzo d’Accursio on Arco. </p>
 <blockquote>
-<p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&lt; <br>
-<p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&lt; <br>
+<p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt; <br>
+<p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
 ASK { <br>
   {  <br>
-    &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&lt; arco-core:isPartOf <br>
-      &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&lt; ; <br>
+    &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&gt; arco-core:isPartOf <br>
+      &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; ; <br>
       rdfs:label "Sala Urbana"@it . <br>
   } <br>
   UNION <br>
   { <br>
-    &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&lt; arco-core:hasPart <br>
-      &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&lt; . <br>
-    &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&lt; rdfs:label "Sala Urbana"@it . <br>
+    &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; arco-core:hasPart <br>
+      &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&gt; . <br>
+    &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&gt; rdfs:label "Sala Urbana"@it . <br>
   } <br>
 } <br>
  </p>
+</blockquote>
 <br>
 <p> Sala Rossa</p>
 <br>
