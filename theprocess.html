@@ -65,9 +65,39 @@ WHERE { <br>
 <h2 id="Gap-1:-rooms">Gap 1: rooms</h2>
 <br>
 <p> Sala Urbana </p>
+<p>First of all, we searched for the IRI of the concept of sala with this query: </p>
+<p> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+SELECT DISTINCT ?s ?label  
+WHERE {  
+  ?s rdfs:label ?label . 
+  FILTER(REGEX(?label, "sala", "i"))  
+} 
+ORDER BY ?label 
+LIMIT 10 
+
+The result is https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385
+<p> Then, with an ASK query, the knowledge graph was asked whether a hall named sala Urbana was part of palazzo d’Accursio. The Boolean value as a result is false, meaning that Sala Urbana is not present as a part of palazzo d’Accursio on Arco.
+PREFIX arco-core: <https://w3id.org/arco/ontology/core/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+ASK {
+  {
+    <https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385> arco-core:isPartOf
+      <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039> ;
+      rdfs:label "Sala Urbana"@it .
+  }
+  UNION
+  {
+    <https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039> arco-core:hasPart
+      <https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385> .
+    <https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385> rdfs:label "Sala Urbana"@it .
+  }
+}
+ </p>
 <br>
 <p> Sala Rossa</p>
-<p>First of all, we searched for the IRI of the concept of sala with this query: </p>
+<br>
 <h2 id="Gap-2:-decorations-and-statues">Gap 2: decorations and statues</h2>
 <br>
 <p>We noticed that the ArCo entry for Palazzo d’Accursio is missing many details about the artistic heritage found in its various rooms. 
