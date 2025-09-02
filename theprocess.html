@@ -60,6 +60,25 @@ WHERE { <br>
 }</p>
 </blockquote>
 <br>
+<p> Then, we verified whether a picture of Palazzo d'Accursio was present with an OPTIONAL pattern. </p>
+<blockquote>
+  <p>PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; <br>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br> 
+PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt; <br>
+PREFIX a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; <br>
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt; <br>
+<br>
+SELECT * <br>
+WHERE { <br>
+      ?cp a arco:ArchitecturalOrLandscapeHeritage ; <br>
+            rdfs:label ?l . <br>
+       FILTER(REGEX(?l, "palazzo d'accursio", "i")) <br>
+       FILTER(REGEX(?l, "bologna", "i")) <br>
+       OPTIONAL { ?cp foaf:depiction ?depiction } <br>
+} <br>
+</p>
+</blockquote> 
+<br>
 <h2 id="Extraction-of-IRI-and-information">Extraction of IRI and information</h2>
 <br>
 <h2 id="Gap-1:-rooms">Gap 1: rooms</h2>
