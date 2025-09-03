@@ -440,10 +440,53 @@ proposing three steps. <strong>Gemini</strong> changed a bit the format of the a
 before the steps while <strong>chatGPT</strong> and <strong>Mistral</strong>put it at the end. 
 <br>
 <br> 
+<h2 style="text-align: center;">CREATION OF A NEW TRIPLE: SALA DEI CAVALLEGGERI IS PART OF PALAZZO D'ACCURSIO</h2>
+<br>
+<p> Can you create a new construct query in Turtle syntax to use in the Ar.Co Knowledge graph to say that 
+Sala dei Cavalleggeri is part of Palazzo d'Accursio? The iri of sala is <a href="LINK">https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385</a>.
+In the label you will have to put the name of the hall "sala dei Cavalleggeri". The IRI of Palazzo D'Accursio is
+<a href="LINK">https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039</a>. </p>
+<br> 
+<h2 style="text-align: center;">CHAT GPT</h2> 
+<br>  
+<img src="assets/images/triplesalacavalleggeriChatGPT.png" alt= "triplesalacavalleggeriChatGPT"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<br>
+<h2 style="text-align: center;">GEMINI</h2> 
+<img src="assets/images/triplesalacavalleggeriGemini.png" alt= "triplesalacavalleggeriGemini"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
+<h2 style="text-align: center;">MISTRAL</h2> 
+<img src="assets/images/triplesalacavalleggeriMistral.png" alt= "triplesalacavalleggeriMistral"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<br>
+<h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
+<br>
+<p> <strong>ChatGPT’s</strong> triple is the longest, both in terms of number of triples and total character count, 
+because it includes an additional property (l0:name), uses fully qualified URIs (not compacted) and uses 
+language-tagged literals, which add extra characters. The triple proposed by <strong>Gemini</strong> seems to present some 
+issues like wrong namespace since it uses https://w3id.org/arco/resource/ as a prefix (which is usually for 
+individuals, not ontologies). Another issue could be the Inconsistent use of terms, infact dct:isPartOf is okay 
+but may not align with ARCO's internal ontology (core:isPartOf would be better). Another issue is present in 
+the query proposed by <strong> Mistral</strong> because it may assume that the resource is a CulturalProperty — but that's unclear
+if "Agent" actually refers to a physical hall or a person (name "Agent" might be misleading). </p>
 
 
 
 
-  
 
-  
+
+
+
+
+
+
+
+
+
