@@ -125,6 +125,11 @@ ASK { <br>
 To begin enriching this information, we focused on the presence of frescoes, statues and libraries within the palace. 
 For this task, we employed large language models (LLMs), using all the prompting techniques: zero-shot, few-shot, and chain-of-thought.</p>
 <br>
+<ul>
+  <li>FRESCO BY PROSPERO FONTANA</li>
+</ul>
+<br>
+<p>First of all,  we prompted a few-shot chain-of-thought in order to retrieve information on the presence of frescoes inside the palace:</p>
 <br>
 <h2 style="text-align: center;"> FEW-SHOT CHAIN-OF-THOUGHT PROMPTING TECHNIQUE </h2>
 <br>
@@ -185,7 +190,8 @@ Now think step by step and give the answers of the following case using the same
             object-fit:contain; max-height:400px;">
 <br>
 <p>Mistral responded in Italian, although the prompt was given in the English language. This cannot be considered as a mistake, because in the prompt we didn’t specify which language
-we wanted the answer to be. Gemini in this case is more accurate because it is the only one to mention Sala d’Ercole, which contains frescoes.</p>
+we wanted the answer to be. Gemini in this case is more accurate because it is the only one to mention <a href="https://it.wikipedia.org/wiki/Sala_d%27Ercole_(Bologna)">Sala d'Ercole</a>, 
+which indeed contains frescoes.</p>
 <br>
 <p>After knowing the existence of frescoes within the Palazzo d’Accursio, we asked ArCo SPARQL endpoint to retrieve the IRI of  “affresco”:</p> 
 <br>
@@ -202,7 +208,7 @@ LIMIT 10 </p>
 <br>
 <p>IRI: <a href="https://dati.beniculturali.it/lodview-arco/resource/DecorativeApparatusType/1100389968affresco.html">https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco</a></p>
 <br>
-<p>We now have all the necessary information to query ArCo in order to verify whether a link already exists between Palazzo d’Accursio and any fresco. </p>
+<p>We now have all the necessary information to query ArCo to verify whether a link already exists between Palazzo d’Accursio and any fresco. </p>
 <br>
 <blockquote>
   <p>PREFIX arco-dd: &lt;https://w3id.org/arco/ontology/denotative-description&gt; <br>
@@ -229,8 +235,10 @@ arco-dd:hasDecorativeApparatusType <br>
             object-fit:contain; max-height:400px;">
 <br>
 <p>The result of this query is false: there is no connection between Palazzo d'Accursio and any fresco</p>
-<p>Since in ArCo there is no reference to any of these important frescoes of the Palazzo d’Accursio,
-we decided to propose to add at least the most famous one. So we wrote a question to ChatGpt employing a zero-shot prompting technique: </p>
+<p>So, since in ArCo there is no reference to any of these important frescoes of the Palazzo d’Accursio,
+we decided to propose to add at least the most famous one. So we wrote a question to ChatGpt employing a zero-shot prompting technique:</p>
+<br>
+<h2 style="text-align: center;"> ZERO-SHOT PROMPTING TECHNIQUE </h2>
 <br>
 <p>What is the most important fresco in Palazzo d'Accursio?</p> 
 <br>
@@ -242,7 +250,10 @@ we decided to propose to add at least the most famous one. So we wrote a questio
             object-fit:contain; max-height:400px;">
 <br>
 <p>The following answer is wrong, because the cycles of frescoes by <a href="https://www.arte.it/guida-arte/bologna/artista/prospero-fontana-331">
-Prospero Fontana</a> are located in the Chapel, not in the Sala Farnese. So the information had to be manually corrected to avoid the mistake.</p>
+Prospero Fontana</a> are located in the <a href="https://it.wikipedia.org/wiki/Cappella_Farnese">Chapel</a>, not in the 
+<a href="https://it.wikipedia.org/wiki/Sala_Farnese_(Bologna)">Sala Farnese</a>. So the information had to be manually corrected to avoid the mistake.</p>
+<br>
+<p>After identifying and checking the most important fresco of Palazzo d'Accursio, we asked LLMs to build a new series of triples connecting Palazzo d'Accursio with the fresco by Prospero Fontana:</p>
 <br>
 <p>I would like you to suggest a new query in Turtle that expresses the fact that there is a fresco inside Palazzo d'Accursio. 
 So link Palazzo d'Accursio with the concept of fresco. The IRI for Palazzo d'Accursio is the following: 
