@@ -86,6 +86,27 @@ WHERE { <br>
 <br>
 <h2 id="Extraction-of-IRI-and-information">Extraction of IRI and information</h2>
 <br>
+<p>After verifying the existence of Palazzo d’Accursio and examining related images, we formulated a query to retrieve its exact IRI.</p>
+<blockquote>
+  <p>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt; <br>
+SELECT DISTINCT ?cp <br>
+WHERE { <br>
+?cp a arco:ArchitecturalOrLandscapeHeritage ; <br>
+rdfs:label ?l . <br>
+FILTER(REGEX(?l, "Palazzo d'Accursio", "i")) <br>
+} <br>
+LIMIT 10</p>
+</blockquote>
+<br>
+<p>This led us to the IRI of Palazzo d’Accursio: 
+<a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039">https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039</a>.
+From there, we began exploring its ontologies and the various pieces of information associated with it.</p>
+<br>
+<img src="assets/images/Palazzo Sparql.png" alt="Palazzo Sparql.png"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
 <h2 id="Gap-1:-rooms">Gap 1: rooms</h2>
 <br>
 <h2 style="text-align: center;">SALA DEI CAVALLEGGERI</h2> 
