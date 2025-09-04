@@ -322,7 +322,8 @@ ASK { <br>
 <br>
 <p> We asked three Large language model to verify if sala Urbana is a hall of palazzo d’Accursio. The LLMs chosen are ChatGPT, Gemini and Mistral. We used all three prompting techniques.</p>
 <br>
-<h2 style="text-align: center;">ZERO-SHOT PROMPTING TECHNIQUE</h2>  
+<h2 style="text-align: center;">ZERO-SHOT PROMPTING TECHNIQUE</h2>
+<p> Prompt: Is a hall named “sala Urbana” present in palazzo d’Accursio in Bologna?</p>
 <br>
 <h2 style="text-align: center;">CHAT GPT</h2>  
 <img src="assets/images/zero shot chat.png" alt= "zero shot chat"
@@ -378,7 +379,8 @@ style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;">  
 <br>
-<h2 style="text-align: center;">ZERO-SHOT CHAIN-OF-THOUGHT</h2> 
+<h2 style="text-align: center;">ZERO-SHOT CHAIN-OF-THOUGHT</h2>
+<p>Prompt: Is a hall named “Sala Urbana” present in palazzo d’Accursio in Bologna? Let’s think step by step. </p>
 <h2 style="text-align: center;">CHAT GPT</h2>
 <img src="assets/images/z-s chain-of-thought chat.png" alt= "z-s chain-of-thought chat"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
@@ -397,7 +399,15 @@ style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;">  
 <br>
-<h2 style="text-align: center;">FEW-SHOT CHAIN-OF-THOUGHT</h2>  
+<h2 style="text-align: center;">FEW-SHOT CHAIN-OF-THOUGHT</h2> 
+<p>prompt:Q1: Is a hall called “sala Maccari” present in palazzo Madama in Rome? 
+A1:
+Step 1: Palazzo Madama is located in Rome and it is the seat of the Italian Senate.
+Step 2: Cesare Maccari was a painter and sculptor.
+Step 3: Sala Maccari takes its name after the painter who created the frescoes.
+Final answer: sala Maccari is situated in palazzo Madama in Rome. 
+Q2: Is a hall named “sala Urbana” present in palazzo d’Accursio in Bologna? Let’s think step by step.
+ </p>
 <h2 style="text-align: center;">CHAT GPT</h2>  
 <img src="assets/images/f-s chain-of-thought chat.png" alt= "f-s chain-of-thought chat"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
