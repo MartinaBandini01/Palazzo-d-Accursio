@@ -277,9 +277,8 @@ style="max-width:100%; height:auto; display:block; margin:25px auto;
 <br>
 <h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
 <br>
-<p> <strong>ChatGPT’s</strong> triple is the longest, both in terms of number of triples and total character count, 
-because it includes an additional property (l0:name), uses fully qualified URIs (not compacted) and uses 
-language-tagged literals, which add extra characters. The triple proposed by <strong>Gemini</strong> seems to present some 
+<p> <strong>ChatGPT’s</strong>  triple is clear and well-formed within the ARCO ontology but lacks typing, which limits its semantic richness.
+The triple proposed by <strong>Gemini</strong> seems to present some 
 issues like wrong namespace since it uses https://w3id.org/arco/resource/ as a prefix (which is usually for 
 individuals, not ontologies). Another issue could be the Inconsistent use of terms, infact dct:isPartOf is okay 
 but may not align with ARCO's internal ontology (core:isPartOf would be better). Another issue is present in 
