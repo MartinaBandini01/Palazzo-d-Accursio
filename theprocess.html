@@ -255,40 +255,52 @@ before the steps while <strong>chatGPT</strong> and <strong>Mistral</strong>put 
 <br> 
 <h2 style="text-align: center;">CREATION OF A NEW TRIPLE: SALA DEI CAVALLEGGERI IS PART OF PALAZZO D'ACCURSIO</h2>
 <br>
-<p> Can you create a new construct query in Turtle syntax to use in the Ar.Co Knowledge graph to say that 
-Sala dei Cavalleggeri is part of Palazzo d'Accursio? The iri of sala is <a href="LINK">https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385</a>.
-In the label you will have to put the name of the hall "sala dei Cavalleggeri". The IRI of Palazzo D'Accursio is
-<a href="LINK">https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039</a>. </p>
+<p> I want to enrich the ArCo knowledge graph by adding new RDF triples to the resource Palazzo d'Accursio (0800262039).
+Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence 
+"Sala dei Cavalleggeri is part of Palazzo d'Accursio". The subject is a hall, its IRI is: <a href="LINK">https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385</a> it must have the label "Sala dei Cavalleggeri".
+The predicate is the ArCo ontology property: https://w3id.org/arco/ontology/core/isPartOf; The object's IRI is Palazzo d'Accursio's one:<a href="LINK"> https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039</a>. Include all the necessary PREFIX declarations. </p>
 <br> 
 <h2 style="text-align: center;">CHAT GPT</h2> 
 <br>  
-<img src="assets/images/righttripleChatGPT.png" alt= "righttripleChatGPT"
+<img src="assets/images/tripleChatGPTcorrect.png" alt= "tripleChatGPTcorrect"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<br>
+<img src="assets/images/rdftripleChatGPT.png" alt= "rdftripleChatGPT"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;">
 <br>
 <h2 style="text-align: center;">GEMINI</h2> 
-<img src="assets/images/triplesalacavallggeriGemini.png" alt= "triplesalacavallggeriGemini"
+<img src="assets/images/newtripleGemini.png" alt= "newtripleGemini"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
+<img src="assets/images/rdftripleGemini.png" alt= "rdftripleGemini"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
             border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
             object-fit:contain; max-height:400px;">
 <br>
 <h2 style="text-align: center;">MISTRAL</h2> 
-<img src="assets/images/triplesalacavalleggeriMistral.png" alt= "triplesalacavalleggeriMistral"
+<img src="assets/images/newtripleMistral.png" alt= "newtriplesalaMistral"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<br>
+<img src="assets/images/rdftripleMistral.png" alt= "rdftripleMistral"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;">
 <br>
 <h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
 <br>
-<p> <strong>ChatGPT’s</strong>  triple is clear and well-formed within the ARCO ontology but lacks typing, which limits its semantic richness.
-The triple proposed by <strong>Gemini</strong> seems to present some 
-issues like wrong namespace since it uses https://w3id.org/arco/resource/ as a prefix (which is usually for 
-individuals, not ontologies). Another issue could be the Inconsistent use of terms, infact dct:isPartOf is okay 
-but may not align with ARCO's internal ontology (core:isPartOf would be better). Another issue is present in 
-the query proposed by <strong> Mistral</strong> because it may assume that the resource is a CulturalProperty — but that's unclear
-if "Agent" actually refers to a physical hall or a person (name "Agent" might be misleading). </p>
-<br>
+<p> The three triples differ in structure, semantics, and query logic. <strong>ChatGPT</strong>'s and <strong>Gemini</strong>'s triples both express the same basic information 
+but differ in syntax: the first uses full URIs and includes a language tag on the label, while the second uses prefixed URIs and omits the language tag. 
+The triple proposed by <strong>Mistral</strong> adds semantic richness by declaring the resource as a CulturalProperty, which is absent in the other two. 
+Additionally, while the first and third are static constructions with empty WHERE clauses, the second includes a VALUES clause, suggesting a more dynamic approach to data generation. </p>
+<br> 
 <h2> <strong>SALA URBANA</strong> </h2>
 <p>First of all, we searched for the IRI of the concept of sala with this query: </p>
 <br>
