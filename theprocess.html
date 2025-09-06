@@ -85,8 +85,8 @@ WHERE { <br>
   style="max-width:100%; height:auto; display:block; margin:25px auto;
             border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
             object-fit:contain; max-height:400px;">    
-</p>
 </blockquote> 
+</p>
 <br>
 <h2 id="Extraction-of-IRI-and-information">Extraction of IRI and information</h2>
 <br>
@@ -303,10 +303,10 @@ ORDER BY ?label <br>
 LIMIT 10</p> 
 </blockquote>
 <p>The result is https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385. </p>
-<p> Then, with an ASK query, the knowledge graph was asked whether a hall named sala Urbana was part of palazzo d’Accursio. The Boolean value as a result is false, meaning that Sala Urbana is not present as a part of palazzo d’Accursio on Arco. </p>
+<p> Then, with an ASK query, the knowledge graph was asked whether a hall named Sala Urbana was part of Palazzo d’Accursio. The Boolean value as a result is false, meaning that Sala Urbana is not present as a part of palazzo d’Accursio on Arco. </p>
 <blockquote>
-<p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt; <br>
-<p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
+<pre>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt; <br>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
 ASK { <br>
   {  <br>
     &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&gt; arco-core:isPartOf <br>
@@ -320,13 +320,13 @@ ASK { <br>
     &lt;https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385&gt; rdfs:label "Sala Urbana"@it . <br>
   } <br>
 } <br>
- </p>
+ </pre>
 </blockquote>
 <br>
-<p> We asked three Large language model to verify if sala Urbana is a hall of palazzo d’Accursio. The LLMs chosen are ChatGPT, Gemini and Mistral. We used all three prompting techniques.</p>
+<p> We asked three Large language model to verify if Sala Urbana is a hall of Palazzo d’Accursio. The LLMs chosen are ChatGPT, Gemini and Mistral. We used all three prompting techniques.</p>
 <br>
 <h2 style="text-align: center;">ZERO-SHOT PROMPTING TECHNIQUE</h2>
-<p> Prompt: Is a hall named “sala Urbana” present in palazzo d’Accursio in Bologna?</p>
+<p> Prompt: Is a hall named “Sala Urbana” present in Palazzo d’Accursio in Bologna?</p>
 <br>
 <h2 style="text-align: center;">CHAT GPT</h2>  
 <img src="assets/images/zero shot chat.png" alt= "zero shot chat"
@@ -357,11 +357,11 @@ style="max-width:100%; height:auto; display:block; margin:25px auto;
 <br>
 <h2 style="text-align: center;">FEW-SHOT PROMPTING TECHNIQUE</h2>
 <br>
-<p> Prompt:Q: Is a hall named “Sala di Lorenzo il Magnifico” present in palazzo Vecchio in Florence? <br>
-A: Yes, is it decorated with frescoes depicting Lorenzo il Magnifico. <br>
-Q: Is a hall called “sala del Trono” present in Reggia di Caserta? <br>
+<p> Prompt:Q: Is a hall named “Sala di Lorenzo il Magnifico” present in Palazzo Vecchio in Florence? <br>
+A: Yes, it is decorated with frescoes depicting Lorenzo il Magnifico. <br>
+Q: Is a hall called “Sala del Trono” present in Reggia di Caserta? <br>
 A: Yes, a throne is located there. <br>
-Q: Is a hall named “sala Urbana” present in palazzo d’Accursio in Bologna? <br>
+Q: Is a hall named “Sala Urbana” present in Palazzo d’Accursio in Bologna? <br>
 A:... <br>  </p>
 <br>  
 <h2 style="text-align: center;">CHAT GPT</h2>   
@@ -383,7 +383,7 @@ style="max-width:100%; height:auto; display:block; margin:25px auto;
            object-fit:contain; max-height:400px;">  
 <br>
 <h2 style="text-align: center;">ZERO-SHOT CHAIN-OF-THOUGHT</h2>
-<p>Prompt: Is a hall named “Sala Urbana” present in palazzo d’Accursio in Bologna? Let’s think step by step. </p>
+<p>Prompt: Is a hall named “Sala Urbana” present in Palazzo d’Accursio in Bologna? Let’s think step by step. </p>
 <h2 style="text-align: center;">CHAT GPT</h2>
 <img src="assets/images/z-s chain-of-thought chat.png" alt= "z-s chain-of-thought chat"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
@@ -403,13 +403,13 @@ style="max-width:100%; height:auto; display:block; margin:25px auto;
            object-fit:contain; max-height:400px;">  
 <br>
 <h2 style="text-align: center;">FEW-SHOT CHAIN-OF-THOUGHT</h2> 
-<p>prompt:Q1: Is a hall called “sala Maccari” present in palazzo Madama in Rome? <br>
+<p>prompt:Q1: Is a hall called “Sala Maccari” present in Palazzo Madama in Rome? <br>
 A1: <br>
 Step 1: Palazzo Madama is located in Rome and it is the seat of the Italian Senate. <br>
 Step 2: Cesare Maccari was a painter and sculptor. <br>
 Step 3: Sala Maccari takes its name after the painter who created the frescoes. <br>
-Final answer: sala Maccari is situated in palazzo Madama in Rome. <br>
-Q2: Is a hall named “sala Urbana” present in palazzo d’Accursio in Bologna? Let’s think step by step. <br> </p>
+Final answer: Sala Maccari is situated in Palazzo Madama in Rome. <br>
+Q2: Is a hall named “Sala Urbana” present in Palazzo d’Accursio in Bologna? Let’s think step by step. <br> </p>
 <br>
 <h2 style="text-align: center;">CHAT GPT</h2>  
 <img src="assets/images/f-s chain-of-thought chat.png" alt= "f-s chain-of-thought chat"
