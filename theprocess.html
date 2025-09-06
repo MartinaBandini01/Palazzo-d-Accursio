@@ -434,9 +434,10 @@ On the other hand, when asked with a chain-of-though prompt it stated that it ca
 <strong>Gemini</strong> and <strong>Mistral</strong> were more concise when prompted with a zero-shot and few-shot question, but gave more exhaustive answers with the chain-of-thought prompting technique than ChatGPT. </p> 
 <br>
 <h2 style="text-align: center;">CREATION OF A NEW TRIPLE: SALA URBANA IS PART OF PALAZZO D'ACCURSIO </h2>  
-<p> Finally, we asked the LLMs to create new triples based on the information retrieved. Because there is no existing IRI of Sala Urbana, we asked the LLMs to create a triple stating that a hall with the label “sala Urbana” is part of Palazzo d’Accursio.
-Prompt: Can you create a new construct query in Turtle syntax to use in the Arco Knowledge graph to say that Sala Urbana is part of Palazzo d'Accursio? The IRI of sala is https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385. In the label you will have to put the name of the hall "sala Urbana". 
-The IRI of Palazzo d'Accursio is https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039. </p>
+<p> Finally, we asked the LLMs to create new triples based on the information retrieved. Because there is no existing IRI of Sala Urbana, we asked the LLMs to create a triple stating that a hall with the label “sala Urbana” is part of Palazzo d’Accursio. <br>
+Prompt: I want to enrich the ArCo knowledge graph by adding new RDF triples to the resource Palazzo d'Accursio (0800262039). <br>
+Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence "Sala Urbana is part of Palazzo d'Accursio". The subject is a hall, its IRI is: https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385 it must have the label "Sala Urbana". <br> 
+The predicate is the ArCo ontology property: https://w3id.org/arco/ontology/core/isPartOf; The object's IRI is Palazzo d'Accursio's one: https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039. Include all the necessary PREFIX declarations.</p>
 <h2 style="text-align: center;">CHAT GPT</h2>  
 <img src="assets/images/new triple chat.png" alt= "new triple chat"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
