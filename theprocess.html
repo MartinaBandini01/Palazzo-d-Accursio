@@ -439,38 +439,36 @@ Prompt: I want to enrich the ArCo knowledge graph by adding new RDF triples to t
 Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence "Sala Urbana is part of Palazzo d'Accursio". The subject is a hall, its IRI is: https://w3id.org/arco/resource/Agent/6b694e8cf87fc88d392ed8ebf81d9385 it must have the label "Sala Urbana". <br> 
 The predicate is the ArCo ontology property: https://w3id.org/arco/ontology/core/isPartOf; The object's IRI is Palazzo d'Accursio's one: https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039. Include all the necessary PREFIX declarations.</p>
 <h2 style="text-align: center;">CHAT GPT</h2>  
-<img src="assets/images/new triple chat.png" alt= "new triple chat"
+<img src="assets/images/new triple sala urbana sparql chat.png" alt= "new triple sala urbana sparql chat"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;"> 
+<img src="assets/images/sala urbana rdf chat.png" alt= "sala urbana rdf chat"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;"> 
 <br>
 <h2 style="text-align: center;">GEMINI</h2>  
-<img src="assets/images/new triple gemini.png" alt= "new triple gemini"
+<img src="assets/images/new triple sala urbana sparql gemini.png" alt= "new triple sala urbana sparql gemini"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<img src="assets/images/sala urbana rdf gemini.png" alt= "sala urbana rdf gemini"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;">
 <br>
 <h2 style="text-align: center;">MISTRAL</h2>  
-<img src="assets/images/new triple mistral.png" alt= "new triple mistral"
+<img src="assets/images/new triple sala urbana sparql mistral.png" alt= "new triple sala urbana sparql mistral"
+style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<img src="assets/images/sala urbana rdf mistral.png" alt= "sala urbana rdf mistral"
 style="max-width:100%; height:auto; display:block; margin:25px auto;
            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
            object-fit:contain; max-height:400px;">
 <br>
 <h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
-<p> The query created by ChatGPT is the only query that explicates the CONSTRUCT pattern.
-“IsPartOf” is a property of the core ontology, not of the location ontology, the prefix “arco-location” is wrong, “arco-core” is the right one. 
-The query created by Gemini defines the IRI of “sala” with the property “arco:Room”. “Room” is a very specific class in construction description ontology. It also uses the property “arco:isComponentOf”, which is a sub-property of “isPartOf”.
-The query created by Mistral is longer than the other two. It specifies that the IRI of “sala” is a cultural property, which seems wrong. A more correct class would be “CulturalPropertyPart”. The property “isPartOf” is identified with the prefix “arco:dd” meaning denotative description, but being a part of is not part of the denotive description ontology but of the core ontology. Finally, the class “CulturalProperty” was substituted with the more accurate “ArchitecturalOrLandscapeHeritage”.
-Overall, Gemini was the most precise and clear in creating the triples. It used slightly different classes and properties, but they are more specific.</p>
-<br>
-<img src="assets/images/new triple chat corrected.png" alt= "new triple chat corrected"
-style="max-width:100%; height:auto; display:block; margin:25px auto;
-           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
-           object-fit:contain; max-height:400px;" >  
-<img src="assets/images/new triple mistral corrected.png" alt= "new triple mistral corrected"
-style="max-width:100%; height:auto; display:block; margin:25px auto;
-           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
-           object-fit:contain; max-height:400px;">
 <br>
 <p> Sala Rossa</p> <h2 id="Sala-Rossa">Sala Rossa</h2><br><p>To verify whether Sala Rossa was already documented as part of Palazzo d’Accursio in the ArCo Knowledge Graph, we executed a SPARQL ASK query:</p><br><pre>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt; <br> PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
 ASK { <br> { <br>   &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/SalaRossa_PalazzoAccursio&gt; <br>      arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; ;  <br>    rdfs:label "Sala Rossa"@it .<br>  } <br> UNION<br> {  <br>  &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt;  <br>     arco-core:hasPart &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/SalaRossa_PalazzoAccursio&gt; . <br>   &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/SalaRossa_PalazzoAccursio&gt;  <br>     rdfs:label "Sala Rossa"@it . <br> }<br>}<br></pre><br><p>The result of the query was <strong>FALSE</strong>: Sala Rossa does not appear as a documented part of Palazzo d’Accursio in ArCo.</p><br>
