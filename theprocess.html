@@ -741,6 +741,22 @@ FILTER(REGEX(?label, "statua", "i"))<br>
 <p>This led us to the IRI of "statua": 
 <a href="https://w3id.org/arco/resource/CulturalPropertyDefinition/statua">https://w3id.org/arco/resource/CulturalPropertyDefinition/statua</a>.
 Then, with an ASK query, the knowledge graph was asked whether a statue was part of Palazzo d’Accursio. The Boolean value as a result is false, meaning that no statue is part of palazzo d’Accursio on Arco.
+<blockquote>
+<p>PREFIX arco-dd:&lt;https://w3id.org/arco/ontology/denotative-description&gt <br>
+ASK { <br>
+{ <br>  
+&lt;https://w3id.org/arco/resource/CulturalPropertyDefinition/statua&gt<br>
+arco-dd:isDecorativeApparatusTypeOf <br> 
+&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039.&gt <br>
+} <br>
+UNION <br>
+{ <br>
+&lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt <br>
+arco-dd:hasDecorativeApparatusType <br>
+&lt;https://w3id.org/arco/resource/CulturalPropertyDefinition/statua.&gt <br>
+} <br>
+} </p>
+</blockquote>
 <br>
 <h2 id="Gap-3:-library">Gap 3: library</h2>
 <br>
