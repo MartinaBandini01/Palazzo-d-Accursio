@@ -838,8 +838,43 @@ Compared to both,  <strong>Chatgpt's</strong> answer is more detailed and contex
 <br> 
 <p>Q: Is a statue named "statua di Papa Gregorio XIII" present on Palazzo d'Accursio in Bologna? Let's think step by step. </p>
 <br>
-<h2 style="text-align: center;">CHAT GPT</h2> 
+<h2 style="text-align: center;">CHAT GPT</h2>
 <br>
+<img src="assets/images/ChainChat.PNG" alt="ChainChat.PNG"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
+<h2 style="text-align: center;">GEMINI</h2>
+<br>
+<img src="assets/images/GEMINICHAIN.PNG" alt="GEMINICHAIN.PNG"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
+<h2 style="text-align: center;">MISTRAL</h2>
+<br>
+<img src="assets/images/Mistralchain.PNG" alt="Mistralchain.PNG"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
+<br>
+<h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT ANSWERS AND BEHAVIOUR OF LLMS</h2>
+<p> All three answers converge on the same conclusion but they differ in style. <strong>Chatgpt's</strong> is evidence-based, citing authoritative sources directly (city website, library, encyclopedic references). It’s the most documented, prioritizing verifiable references over narrative flow.
+ <strong>Gemini's</strong> is methodical and procedural, emphasizing the search process and general confirmation, but it feels more like a reasoning outline than a polished explanation.
+<strong>Mistral's</strong> is concise, well-structured, and adds an historical nuance about the inscription “DIVUS PETRONIUS,” which might confuse visitors. It reads more like a cultural note than a dry fact-check.</p>
+<br> 
+<h2 style="text-align: center;">CREATION OF A NEW TRIPLE: STATUE OF PAPA GREGORIO XIII IS PART OF PALAZZO D’ACCURSIO </h2>
+<br>
+<p> Finally, we asked the LLMs to create new triples based on the information retrieved: statue of Papa Gregorio XIII is, indeed, part of Palazzo D’Accursio. Because there is no existing IRI of Statua di Papa Gregorio XIII, I asked the LLMs to create a triple stating that a statue with the label “statua di Papa Gregorio XIII” is part of Palazzo d’Accursio:<br>
+I want to enrich the ArCo knowledge graph by adding new RDF triples to the resource Palazzo d'Accursio (0800262039). Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence "Statua di Papa Gregorio XIII is part of Palazzo d’Accursio"
+The subject is a general statue which IRI is: <a href="https://w3id.org/arco/resource/CulturalPropertyDefinition/statua"></a>, , it must have the label "statua di Papa Gregorio XIII";
+The predicate is the ArCo ontology property: <a href="https://w3id.org/arco/ontology/core/isPartOf"></a>, ;
+The object's IRI is Palazzo d'Accursio's one: <a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039"></a>, 
+Include all the necessary PREFIX declarations</p>
+<br> 
+<h2 style="text-align: center;">CHAT GPT</h2> 
+<br>  
 <h2 id="Gap-3:-library">Gap 3: library</h2>
 <br>
 <p>
