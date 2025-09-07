@@ -727,6 +727,20 @@ Conceptually, it is very similar to the first case, but it does not assign a per
 In <strong>Gemini’s</strong> model, there is no longer a separate “fresco” resource. The building is directly linked to the type of decorative apparatus (fresco) via a property 
 (hasInternalDecorativeApparatusOrDecorativeCycle). However, this property is not part of the standard ArCo ontology, suggesting a looser interpretation or hallucination.</p>
 <br>
+<h2 style="text-align: center;">STATUE</h2> 
+<p> First of all, we searched for the IRI of the concept of "statua" with this query: </p>
+<blockquote>
+  <p>PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?s ?label
+WHERE {
+?s rdfs:label ?label.
+FILTER(REGEX(?label, "statua", "i"))
+}</p>
+</blockquote>
+<br>
+<p>This led us to the IRI of "statua": 
+<a href="https://w3id.org/arco/resource/CulturalPropertyDefinition/statua">https://w3id.org/arco/resource/CulturalPropertyDefinition/statua</a>.
+Then, with an ASK query, the knowledge graph was asked whether a statue was part of Palazzo d’Accursio. The Boolean value as a result is false, meaning that no statue is part of palazzo d’Accursio on Arco.
 <br>
 <h2 id="Gap-3:-library">Gap 3: library</h2>
 <br>
