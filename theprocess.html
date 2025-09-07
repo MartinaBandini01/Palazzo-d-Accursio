@@ -876,6 +876,25 @@ Include all the necessary PREFIX declarations</p>
 <br> 
 <h2 style="text-align: center;">CHAT GPT</h2> 
 <br>  
+<br>
+<blockquote>
+<p>PREFIX arco:&lt;https://w3id.org/arco/resource/&gt;<br>
+PREFIX rdfs:&lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt;<br>  
+PREFIX arco-core:&lt;https://w3id.org/arco/ontology/core/&gt;<br>
+<br>
+<br>
+CONSTRUCT { <br> 
+&lt;https://w3id.org/arco/resource/CulturalProperty/statua-PapaGregorioXIII&gt; <br>
+a &lt;https://w3id.org/arco/resource/CulturalPropertyDefinition/statua&gt; ; <br>
+rdfs:label "Papa Gregorio XIII"@it ;<br> 
+arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .<br>
+} <br>
+WHERE { <br>
+  # pattern can be empty if you're just inserting this statement <br>
+} <br> </p>
+</blockquote>
+<br>
 <h2 id="Gap-3:-library">Gap 3: library</h2>
 <br>
 <p>
