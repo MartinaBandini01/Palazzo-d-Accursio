@@ -539,10 +539,10 @@ Ex.2 <br>
 <strong>Frescoes:</strong> <i>Scala delle Visioni (Staircase of Visions)</i> --> This symbolic staircase leads to the upper tower and is adorned with an allegorical fresco in the vault, 
 representing the triumph of Mattei's electrohomeopathy over traditional medicine. <br>
 <i>Sala della Musica (Music Hall)</i> --> Inspired by the Cathedral of Córdoba, this room features intricate frescoes that complement its Moorish architectural elements. <br>
-<i>Cappella (Chapel)</i> --> The chapel, modeled after the Mezquita of Córdoba, showcases frescoes that harmonize with its distinctive black-and-white striped arches and Islamic-inspired design . <br>
+<i>Cappella (Chapel)</i> --> The chapel, modeled after the Mezquita of Córdoba, showcases frescoes that harmonize with its distinctive black-and-white striped arches and Islamic-inspired design. <br>
 <i>Cortile dei Leoni (Courtyard of the Lions)</i> --> While primarily known for its architectural features, this area also includes decorative elements that contribute to the castle's artistic ambiance. <br>
 <br>
-Now give the answers of the following case using the same style: <br>
+Now give the answers to the following case using the same style: <br>
 <strong>Palace: Palazzo d’Accursio</strong> <br>
 <strong>Year:</strong> <br>
 <strong>Frescoes:</strong></p>
@@ -578,7 +578,7 @@ Now give the answers of the following case using the same style: <br>
             object-fit:contain; max-height:400px;">
 <br>
 <p>Mistral responded in Italian, although the prompt was given in English. This cannot be considered a mistake, because in the prompt, we didn’t specify which language
-we wanted the answer to be. Mistral, in this cas,e is more accurate because it is the only one to mention 
+we wanted the answer to be. Mistral, in this case, is more accurate because it is the only one to mention 
 <a href="https://mmg.inera.it/frontend/bologna/oggetti-esposti/sala-boschereccia">Sala Boschereccia</a>, which indeed contains frescoes.</p>
 <br>
 <p>We then also executed a zero-shot chain-of-thought prompt asking for the same information to check if there are differences in the behaviours of LLMs:</p>
@@ -663,7 +663,7 @@ arco-dd:hasDecorativeApparatusType <br>
 <br>
 <p>The result of this query is false: there is no connection between Palazzo d'Accursio and any fresco</p>
 <p>So, since in ArCo there is no reference to any of these important frescoes of the Palazzo d’Accursio,
-we decided to propose to add at least the most famous one. So we wrote a question to ChatGpt employing a zero-shot prompting technique:</p>
+we decided to propose to add at least the most famous one. So we wrote a question to ChatGPT employing a zero-shot prompting technique:</p>
 <br>
 <h2 style="text-align: center;"> ZERO-SHOT PROMPTING TECHNIQUE </h2>
 <br>
@@ -686,7 +686,7 @@ Prospero Fontana</a> are located in the <a href="https://it.wikipedia.org/wiki/C
 So link Palazzo d'Accursio with the concept of fresco. The IRI for Palazzo d'Accursio is the following: 
 <a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039">https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039</a>, 
 while the IRI for fresco is <a href="https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco">https://w3id.org/arco/resource/DecorativeApparatusType/1100389968affresco</a>. 
-In the RDF triple I would like to have a descriptive label with the following description: "Affreschi di Prospero Fontana nella Cappela Farnese, Palazzo d'Accursio</p>
+In the RDF triple, I would like to have a descriptive label with the following description: "Affreschi di Prospero Fontana nella Cappella Farnese, Palazzo d'Accursio</p>
 <br>
 <h2 style="text-align: center;">CHAT GPT</h2>
 <br>
@@ -711,19 +711,19 @@ In the RDF triple I would like to have a descriptive label with the following de
 <br>
 <h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
 <br>
-<p>The first triple, proposed by <strong>Chatgpt</strong>, states that the building has a distinct physical object (DecorativeApparatus) identified by a URI. 
-It creates a distinct resource for the fresco and linking it via core:hasPart. However, the IRI for fresco is written incorrectly: instead of using the correct 
-IRI given in the prompt: ChatGPT “invented” an incorrect IRI (https://w3id.org/arco/resource/DecorativeApparatus/0800262039-affresco) which was repeated twice, suggesting an hallucination.<br>
+<p>The first triple, proposed by <strong> ChatGPT </strong>, states that the building has a distinct physical object (DecorativeApparatus) identified by a URI. 
+It creates a distinct resource for the fresco and links it via core:hasPart. However, the IRI for fresco is written incorrectly: instead of using the correct 
+IRI given in the prompt: ChatGPT “invented” an incorrect IRI (https://w3id.org/arco/resource/DecorativeApparatus/0800262039-affresco), which was repeated twice, suggesting a hallucination.<br>
 The second model, stated by <strong>Mistral</strong>, uses a blank node ([...]) instead of a URI to represent the decorative apparatus. 
 Conceptually, it is very similar to the first case, but it does not assign a persistent identifier to the fresco: we cannot easily reuse or link this resource elsewhere. <br>
-In <strong>Gemini’s</strong> model there is no longer a separate “fresco” resource. The building is directly linked to the type of decorative apparatus (fresco) via a property 
+In <strong>Gemini’s</strong> model, there is no longer a separate “fresco” resource. The building is directly linked to the type of decorative apparatus (fresco) via a property 
 (hasInternalDecorativeApparatusOrDecorativeCycle). However, this property is not part of the standard ArCo ontology, suggesting a looser interpretation or hallucination.</p>
 <br>
 <br>
 <h2 id="Faced-challenges">Faced challenges</h2>
 <br>
 <p>Several factors made the execution of this project particularly challenging. First of all, the <a href="https://dati.cultura.gov.it/sparql">ArCo SPARQL endpoint</a>
-often proved unstable: on one occasion it was completely unusable for several hours, and in many cases, even when provided with correct queries, 
+often proved unstable: on one occasion, it was completely unusable for several hours, and in many cases, even when provided with correct queries, 
 it failed to return results within the given time limit. As a result, we had to wait considerable amounts of time to obtain responses and frequently had to rerun the queries at different times.</p>
 <p>A second difficulty lay in identifying suitable elements to propose as additions to Palazzo d’Accursio within ArCo. 
 We realized that the knowledge graph does not include IRIs for many historical figures for artists like <a href="https://www.arte.it/guida-arte/bologna/artista/prospero-fontana-331">Prospero Fontana</a>.
