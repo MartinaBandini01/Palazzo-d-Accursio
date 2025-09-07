@@ -37,3 +37,21 @@
 
 @import 'jekyll-theme-architect';
 
+/* Personalizzazione bottoni GitHub Pages */
+header a.button,
+aside a.button {
+  background-color: #d2b48c !important; /* marroncino chiaro */
+  color: black !important;              /* testo nero */
+  border: none !important;
+  border-radius: 8px !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 10px 20px !important;
+  background-image: none !important;    /* elimina immagine di sfondo blu */
+}
+
+header a.button small,
+aside a.button small {
+  color: black !important; /* anche il testo "small" in nero */
+}
+
