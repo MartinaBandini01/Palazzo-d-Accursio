@@ -1080,7 +1080,27 @@ ASK {<br>
 }</p><br>
 </blockquote>
 <p>We employed the predicate <strong>core:hasPart</strong> following the ArCo ontology:
+<img src="assets/images/HASPART SALA.png" alt= "HASPART SALA"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<p>The result was <strong>false</strong>, which means that within the KG no library appears to be connected to Palazzo d’Accursio.
 </p>
+<br>
+<br>
+<p>Once all the necessary information had been gathered, we asked the LLMs to generate new triples confirming the existence of Salaborsa as a library within Palazzo d’Accursio.
+<h2> <strong>Creation of new triples</strong> </h2>
+<p>Once all the necessary information had been gathered, we asked the LLMs to generate new triples confirming the existence of Salaborsa as a library within Palazzo d’Accursio.
+</p>
+<br>
+<p> <strong>Q: I want to enrich the ArCo knowledge graph by adding new RDF triples to the resource Palazzo d'Accursio (0800262039). Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence "Salaborsa Library is part of Palazzo d'Accursio"
+The subject is a general library which IRI is: http://dati.beniculturali.it/cis/Library, it must have the label "Salaborsa";
+The predicate is the ArCo ontology property: https://w3id.org/arco/ontology/core/isPartOf;
+The object's IRI is Palazzo d'Accursio's one: https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039
+Include all the necessary PREFIX declarations
+</strong></p>
+<br>
+<h3> <strong>CHATGPT</strong> </h3>
 
 
   
