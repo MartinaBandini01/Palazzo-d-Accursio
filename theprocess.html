@@ -1041,16 +1041,16 @@ WHERE {<br>
 <h2> <strong>Further Research</strong> </h2>
 <br>
 <p>We then verified the presence in ArCo of at least a linkage between Palazzo d’Accursio and a generic library. On this basis, we submitted a query to the SPARQL endpoint with the objective of retrieving the IRI associated with the entity library (“biblioteca”)</p>
-<blockquote>PREFIX cis: &lt;http://dati.beniculturali.it/cis/&lt;<br>
-  SELECT ?s ?label<br>
+<blockquote> PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;<br>
+
+SELECT ?s ?label<br>
 WHERE {<br>
-?s rdfs:label ?label .<br>
+           ?s rdfs:label ?label .<br>
            FILTER(REGEX(?label, "biblioteca", "i"))<br>
-}<br> 
+}<br>
+
 
 LIMIT 10<br>
-
-
 </blockquote>
 <br>
 <a href="http://dati.beniculturali.it/cis/Library">http://dati.beniculturali.it/cis/Library</a></p>
@@ -1060,22 +1060,23 @@ LIMIT 10<br>
            object-fit:contain; max-height:400px;">
 <br>
 <p>At thi stage we were able to construct our ASK query</p>
-<blockquote>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&lt;<br>
-PREFIX cis: &lt;http://dati.beniculturali.it/cis/&lt;<br>
+<blockquote>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;<br>
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;<br>
 
 ASK {<br>
   {<br>
-    &lt;https://dati.beniculturali.it/lodview/cis/Library.html&lt;<br>
+    &lt;https://dati.beniculturali.it/lodview/cis/Library.html&gt;<br>
         arco-core:isPartof<br>
-    &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&lt; .<br>
+    &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .<br>
   }<br>
   UNION<br>
   {<br>
-    &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&lt;<br>
+    &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt;<br>
         arco-core:hasPart<br>
-     &lt;https://dati.beniculturali.it/lodview/cis/Library.html&lt; .<br>
+      &lt;https://dati.beniculturali.it/lodview/cis/Library.html&gt; .<br>
   }<br>
 }<br>
+
  </blockquote>
 <p>We employed the predicate <strong>core:hasPart</strong> following the ArCo ontology:
 </p>
