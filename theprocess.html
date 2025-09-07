@@ -1036,6 +1036,21 @@ WHERE {<br>
 <strong>Gemini</strong>’s response is the most discursive and expansive, weaving together historical detail, architectural symbolism, and the library’s modern role as a cultural hub. It demonstrates strong precision and contextualization, offering the most complete and nuanced answer, though at the cost of brevity.
 <strong>Mistral</strong>’s response occupies a middle ground: it is moderately detailed, integrates references to related institutions, and balances historical and cultural aspects. However, it is less analytically rigorous than the second and more descriptive than the first, making it comprehensive but not as precise.
 </p>
+<br>
+<br>
+<p>At this stage, we verified the presence in ArCo of at least a linkage between Palazzo d’Accursio and a generic library. On this basis, we submitted a query to the SPARQL endpoint with the objective of retrieving the IRI associated with the entity library (“biblioteca”)</p>
+<blockquote>PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;<br>
+  SELECT ?s ?label<br>
+WHERE {<br>
+?s rdfs:label ?label .<br>
+           FILTER(REGEX(?label, "biblioteca", "i"))<br>
+}<br> 
+
+LIMIT 10<br>
+
+
+</blockquote>
+
 
 
 
