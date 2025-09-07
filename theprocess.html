@@ -774,14 +774,16 @@ We have also noticed that there is no mention of the Salaborsa Library on ArCo, 
 <h2> <strong>SALABORSA</strong> </h2>
 <br>
 <p>We began with a SPARQL query to investigate whether the Salaborsa Library is represented in ArCo.</p>
-<bloquote>PREFIX arco: <https://w3id.org/arco/ontology/arco/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-ASK
-WHERE {
-?subject rdfs:label "Salaborsa".
-}
-</bloquote>
-<p>The Boolean returned a <stron><false/strong>result. Therefore, the Salaborsa Library does not appear to be present in ArCo.
+<blockquote>
+  <p>PREFIX arco: &lt; https://w3id.org/arco/ontology/arco/&gt; <br>
+    PREFIX rdfs: &lt; http://www.w3.org/2000/01/rdf-schema#&gt;<br>
+ASK <br>
+WHERE { <br>
+?subject rdfs:label "Salaborsa". <br>
+} <br> </p>
+</blockquote>
+<br>
+<p>The Boolean returned a <strong>false</strong>result. Therefore, the Salaborsa Library does not appear to be present in ArCo.
 </p>
 <br>
  <p>To enhance the graph with this information, we once again made use of Chagpt, Gemini and Mistral, applying a <strong>zero-shot</strong> prompting approach to attest the presence of Salaborsa inside the complex of Palazzo d’Accursio.
