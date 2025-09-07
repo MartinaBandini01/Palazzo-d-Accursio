@@ -895,7 +895,46 @@ WHERE { <br>
 } <br> </p>
 </blockquote>
 <br>
+<img src="assets/images/Chatturtle.PNG" alt="Chatturtle.PNG"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+            border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+            object-fit:contain; max-height:400px;">
 <h2 id="Gap-3:-library">Gap 3: library</h2>
+<br>
+<h2 style="text-align: center;">GEMINI</h2>
+<br>
+<blockquote>
+<p>PREFIX arco-her: &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/&gt; <br>
+PREFIX arco-onto: &lt;https://w3id.org/arco/ontology/arco&gt; <br>
+PREFIX arco-cpd: &lt;https://w3id.org/arco/resource/CulturalPropertyDefinition/&gt; <br>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
+ <br>
+CONSTRUCT { <br>
+  arco-her:0800262039 arco-onto:hasCulturalProperty ?statue . <br>
+  ?statue a arco-cpd:statua ; <br>
+          rdfs:label "Papa Gregorio XIII"@it . <br>
+} <br>
+WHERE { <br>
+  BIND(bnode() AS ?statue) <br>
+} <br> </p>
+</blockquote>
+<br>
+<h2 style="text-align: center;">MISTRAL</h2>
+<br>
+<blockquote>
+<p>@prefix arco-core:&lt;https://w3id.org/arco/ontology/core/&gt; .
+@prefix arco-dd: &lt;https://w3id.org/arco/ontology/denotative-description/&gt; .
+@prefix arco-catalogue: &lt;https://w3id.org/arco/ontology/catalogue/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;.
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+&lt;https://w3id.org/arco/resource/CulturalPropertyDefinition/statua&gt;
+    a arco-core:CulturalProperty ;
+    rdfs:label "Papa Gregorio XIII"@it ;
+    arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .<br> </p>
+</blockquote>
+<br>
+<h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
 <br>
 <p>
 We have also noticed that there is no mention of the Salaborsa Library on ArCo, despite it being one of the main civic library centers and an integral component of Palazzo d’Accursio.</p>
