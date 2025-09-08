@@ -1089,6 +1089,7 @@ ASK {<br>
 <br>
 <br>
 <p>Once all the necessary information had been gathered, we asked the LLMs to generate new triples confirming the existence of Salaborsa as a library within Palazzo d’Accursio.
+<br>
 <h2> <strong>Creation of new triples</strong> </h2>
 <p>Once all the necessary information had been gathered, we asked the LLMs to generate new triples confirming the existence of Salaborsa as a library within Palazzo d’Accursio.
 </p>
@@ -1099,7 +1100,6 @@ The predicate is the ArCo ontology property: https://w3id.org/arco/ontology/core
 The object's IRI is Palazzo d'Accursio's one: https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039
 Include all the necessary PREFIX declarations
 </strong></p>
-<br>
 <br>
 <h3> <strong>CHATGPT</strong> </h3>
 <br>
@@ -1131,6 +1131,28 @@ cis:Library
 </p>
 <br>
 <h3> <strong>GEMINI</strong> </h3>
+<br>
+<h4>SPARQL CONSTRUCT query</h4>
+<pre><p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+CONSTRUCT {
+  cis:Library rdfs:label "Salaborsa" .
+  cis:Library arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .
+}
+WHERE {
+  BIND(cis:Library AS ?salaborsa)
+}</p></pre>
+<br>
+<h4>Equivalent RDF triple(s) in Turtle syntax</h4>
+<pre><p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+cis:Library rdfs:label "Salaborsa" ;
+  arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .</p></pre>
+
 
   
 
