@@ -1102,6 +1102,8 @@ Include all the necessary PREFIX declarations
 <br>
 <br>
 <h3> <strong>CHATGPT</strong> </h3>
+<br>
+<h4>SPARQL CONSTRUCT query</h4>
 <pre><p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
 PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
@@ -1115,6 +1117,7 @@ WHERE {
 }
 </p></pre>
 <br>
+<h4>Equivalent RDF triple(s) in Turtle syntax</h4>
 <pre><p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
 PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
@@ -1123,7 +1126,11 @@ cis:Library
     rdfs:label "Salaborsa" ;
     arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .
 </p></pre>
-
+<br>
+<p>The result was "error" when executed on the SPARQL endpoint. Since we are creating entirely new triples, the WHERE clause does not filter any existing data and is included solely for syntactic completeness. Consequently, the BIND statement within the WHERE clause could be omitted. Nevertheless, even when applying this approach, the outcome remained “error.”
+</p>
+<br>
+<h3> <strong>GEMINI</strong> </h3>
 
   
 
