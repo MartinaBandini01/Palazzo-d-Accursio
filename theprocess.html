@@ -1093,9 +1093,9 @@ ASK {<br>
 </p>
 <br>
 <p> <strong>Q: I want to enrich the ArCo knowledge graph by adding new RDF triples to the resource Palazzo d'Accursio (0800262039). Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence "Salaborsa Library is part of Palazzo d'Accursio"
-The subject is a general library which IRI is: http://dati.beniculturali.it/cis/Library, it must have the label "Salaborsa";
-The predicate is the ArCo ontology property: https://w3id.org/arco/ontology/core/isPartOf;
-The object's IRI is Palazzo d'Accursio's one: https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039
+The subject is a general library which IRI is: <a href=http://dati.beniculturali.it/cis/Library>http://dati.beniculturali.it/cis/Library</a>, it must have the label "Salaborsa";
+The predicate is the ArCo ontology property:<a href=https://w3id.org/arco/ontology/core/isPartOf>https://w3id.org/arco/ontology/core/isPartOf</a>;
+The object's IRI is Palazzo d'Accursio's one:<a href=https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039<https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039</a>
 Include all the necessary PREFIX declarations
 </strong></p>
 <br>
@@ -1150,6 +1150,8 @@ PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
 cis:Library rdfs:label "Salaborsa" ;
   arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .</p></pre>
+<br>
+<p>We also submitted Gemini’s response to the endpoint, both in its original form and after a manual correction in which the BIND statement was removed. In the former case, the result remained 'error', whereas in the latter we were able to obtain the expected outcome.</p>
 
 
   
