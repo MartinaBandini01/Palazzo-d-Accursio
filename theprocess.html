@@ -1237,7 +1237,27 @@ PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
 cis:Library rdfs:label "Salaborsa" ;
   arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; ;
   owl:sameAs &lt;http://www.wikidata.org/entity/Q3639614&gt; .</p></pre>
+<br>
+<p>In this case as well, by manually removing the BIND statement, we obtained the expected result.</p>
+<img src="assets/images/last HTML.png" alt= "last HTML"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<br>
+<h3> <strong>FINAL QUERY</strong> </h3>
+<blockquote>
+  <p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;<br>
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;<br>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;<br>
 
+CONSTRUCT {<br>
+  cis:Library rdfs:label "Salaborsa" .<br>
+  cis:Library arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .<br>
+  cis:Library owl:sameAs &lt;http://www.wikidata.org/entity/Q3639614&gt; .<br>
+}<br>
+WHERE {<br>
+  }</p></blockquote>
 
 
 
