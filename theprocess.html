@@ -1102,6 +1102,27 @@ Include all the necessary PREFIX declarations
 <br>
 <br>
 <h3> <strong>CHATGPT</strong> </h3>
+<pre><p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+
+CONSTRUCT {
+  ?library rdfs:label "Salaborsa" ;
+           arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .
+}
+WHERE {
+  BIND(cis:Library AS ?library)
+}
+</p></pre>
+<br>
+<pre><p>PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+
+cis:Library
+    rdfs:label "Salaborsa" ;
+    arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .
+</p></pre>
 
 
   
