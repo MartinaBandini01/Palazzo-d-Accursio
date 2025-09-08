@@ -1211,8 +1211,33 @@ WHERE {<br>
 <br>
 <p>We then requested the new query directly from Gemini, which had previously provided the most reliable response</p>
 <br>
-<p><strong>Q: Now I would like to add to my CONSTRUCT query the link to Salaborsa's Wikidata's resource (Q3639614)
-</strong></p>
+<p><strong>Q: Now I would like to add to my CONSTRUCT query the link to Salaborsa's Wikidata's resource (Q3639614)</strong></p>
+<br>
+<h4>SPARQL CONSTRUCT query</h4>
+<pre><p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+
+CONSTRUCT {
+  cis:Library rdfs:label "Salaborsa" .
+  cis:Library arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .
+  cis:Library owl:sameAs &lt;http://www.wikidata.org/entity/Q3639614&gt; .
+}
+WHERE {
+  BIND(cis:Library AS ?salaborsa)
+}</p></pre>
+<br>
+<h4>Equivalent RDF triple(s) in Turtle syntax</h4>
+<pre><p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+
+cis:Library rdfs:label "Salaborsa" ;
+  arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; ;
+  owl:sameAs &lt;http://www.wikidata.org/entity/Q3639614&gt; .</p></pre>
+
 
 
 
