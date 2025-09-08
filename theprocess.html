@@ -1152,6 +1152,56 @@ cis:Library rdfs:label "Salaborsa" ;
   arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .</p></pre>
 <br>
 <p>We also submitted Gemini’s response to the endpoint, both in its original form and after a manual correction in which the BIND statement was removed. In the former case, the result remained 'error', whereas in the latter we were able to obtain the expected outcome.</p>
+<img src="assets/images/OUTCOME SALA.png" alt= "OUTCOME SALA"
+  style="max-width:100%; height:auto; display:block; margin:25px auto;
+           border:1px solid #ddd; box-shadow:2px 2px 5px rgba(0,0,0,0.1);
+           object-fit:contain; max-height:400px;">
+<br>
+<h3> <strong>MISTRAL</strong> </h3>
+<br>
+<h4>SPARQL CONSTRUCT query</h4>
+<pre><p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX arco-res: &lt;https://w3id.org/arco/resource/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+CONSTRUCT {
+  ?library a cis:Library ;
+           rdfs:label "Salaborsa" ;
+           arco-core:isPartOf arco-res:ArchitecturalOrLandscapeHeritage/0800262039 .
+}
+WHERE {
+  BIND(cis:Library AS ?library)
+}</p></pre>
+<br>
+<h4>Equivalent RDF triple(s) in Turtle syntax</h4>
+<pre><p>@prefix arco-core: &lt;https://w3id.org/arco/ontology/core/&gt; .
+@prefix arco-res: &lt;https://w3id.org/arco/resource/&gt; .
+@prefix cis: &lt;http://dati.beniculturali.it/cis/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+cis:Library a cis:Library ;
+           rdfs:label "Salaborsa" ;
+           arco-core:isPartOf arco-res:ArchitecturalOrLandscapeHeritage/0800262039 .
+</p></pre>
+<br>
+<p>With Mistral, the same situation observed with Chat occurred: when tested on the endpoint, the result was 'error' in both of the previously mentioned cases.</p>
+<br>
+<h3> <strong>FINAL QUERY</strong> </h3>
+<blockquote>
+</blockquote><p>PREFIX arco-core: &lt;https://w3id.org/arco/ontology/core/&gt;
+PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+CONSTRUCT {
+  cis:Library rdfs:label "Salaborsa" .
+  cis:Library arco-core:isPartOf &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .
+}
+WHERE {
+ }</p></blockquote>
+
+
+
 
 
   
