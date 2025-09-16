@@ -725,13 +725,15 @@ In the RDF triple, I would like to have a descriptive label with the following d
 <br>
 <h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
 <br>
-<p>The first triple, proposed by <strong> ChatGPT </strong>, states that the building has a distinct physical object (DecorativeApparatus) identified by a URI. 
+<p>The first triple, proposed by <strong> ChatGPT</strong>, states that the building has a distinct physical object (DecorativeApparatus) identified by a URI. 
 It creates a distinct resource for the fresco and links it via core:hasPart. However, instead of using the correct IRI provided in the prompt, it generated a non-existent one 
 (https://w3id.org/arco/resource/DecorativeApparatus/0800262039-affresco). This invented IRI, repeated twice, indicates a case of hallucination.<br>
 The second model, stated by <strong>Mistral</strong>, uses a blank node ([...]) to represent the decorative apparatus. 
 Conceptually, it is very similar to the first case, but it does not assign a persistent identifier to the fresco: we cannot easily reuse or link this resource elsewhere. <br>
 In <strong>Gemini’s</strong> model, the building is directly linked to the type of decorative apparatus (fresco) via a property 
-(hasInternalDecorativeApparatusOrDecorativeCycle). However, this property is not part of the standard ArCo ontology, suggesting a looser interpretation or hallucination.</p>
+(hasInternalDecorativeApparatusOrDecorativeCycle). However, this property is not part of the standard ArCo ontology, suggesting a looser interpretation or hallucination.
+Moreover, the IRI of Palazzo d’Accursio and the fresco are written incorrectly: instead of the full URI enclosed in angle brackets, it only shows ArchitecturalOrLandscapeHeritage/0800262039 and
+DecorativeApparatusType/1100389968affresco. This is not valid Turtle syntax, as the resource is neither a declared prefix nor a properly formatted IRI.</p>
 <br>
 <h2 style="text-align: center;">STATUE</h2> 
 <p> First of all, we searched for the IRI of the concept of "statua" with this query: </p>
