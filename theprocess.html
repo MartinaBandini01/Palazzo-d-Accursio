@@ -953,11 +953,11 @@ We have also noticed that there is no mention of the linkage between the Salabor
     PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
 ASK<br>
 WHERE {<br>
-?subject rdfs:label "Salaborsa". <br>
+?subject rdfs:label "Biblioteca Salaborsa". <br>
 }<br> </p>
 </blockquote>
 <br>
-<p>Through the ASK query the Boolean returned a <strong>false</strong> result.
+<p>Through the ASK query the Boolean returned a <strong>true</strong> result. However, there was no mention of any possible connection with Palazzo d'Accursio.
 </p>
 <br>
 <h2> <strong>Prompt engineering</strong> </h2>
@@ -1087,7 +1087,7 @@ ASK {<br>
 <br>
 <br>
 <h2> <strong>Creation of new triples</strong> </h2>
-<p>Once all the necessary information had been gathered, we asked the LLMs to generate new triples confirming the existence of Salaborsa as a library within Palazzo d’Accursio.
+<p>Once all the necessary information had been gathered, we asked the LLMs to generate new triples confirming the existence of a library within Palazzo d’Accursio, labelled "Salaborsa".
 </p>
 <br>
 <p> <strong>Q: I want to enrich the ArCo knowledge graph by adding new RDF triples to the resource Palazzo d'Accursio (0800262039). Generate FIRST a SPARQL CONSTRUCT query and THEN the corresponding RDF triple in Turtle syntax based on the sentence "Salaborsa Library is part of Palazzo d'Accursio"
