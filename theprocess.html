@@ -943,11 +943,11 @@ In short, only the first query respects the logic of the ontology: it introduces
 <h2 id="Gap-3:-library">Gap 3: library</h2>
 <br>
 <p>
-We have also noticed that there is no mention of the Salaborsa Library on ArCo, despite it being one of the main civic library centers and an integral component of Palazzo d’Accursio.</p>
+We have also noticed that there is no mention of the linkage between the Salaborsa Library and Palazzo d'Accursio on ArCo, despite the being part of the same architectural complex.</p>
 <br>
 <h2> <strong>SALABORSA</strong> </h2>
 <br>
-<p>We began with a SPARQL query to investigate whether the Salaborsa Library is represented in ArCo.</p>
+<p>We began with an ASK query to investigate whether the Salaborsa Library is represented in ArCo.</p>
 <blockquote>
   <p>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
     PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
@@ -957,7 +957,7 @@ WHERE {<br>
 }<br> </p>
 </blockquote>
 <br>
-<p>The Boolean returned a <strong>false</strong> result. Therefore, the Salaborsa Library does not appear to be present in ArCo.
+<p>Through the ASK query the Boolean returned a <strong>false</strong> result.
 </p>
 <br>
 <h2> <strong>Prompt engineering</strong> </h2>
@@ -1010,8 +1010,7 @@ WHERE {<br>
 <p>With this technique, <strong>Gemini</strong> and <strong>Mistral</strong> consistently generated correct responses. By contrast, <strong>ChatGPT</strong> simply replicated the linguistic pattern without genuine comprehension, resulting in an incorrect answer indicative of a hallucination.
 </p>
 <br>
-<p>In the end, we queried the LLMs using a <strong>chain-of-thought</strong> prompting approach to gather information on the cultural significance of Salaborsa in Bologna, thereby providing justification for its inclusion in the knowledge graph.
-</p>
+<p>In the end, we queried the LLMs using a <strong>chain-of-thought</strong> prompting approach to gather information on the cultural significance of Salaborsa in Bologna.</p>
 <br>
 <p><strong>Q: What is the significance of the Salaborsa Library within the context of Bologna's cultural heritage? Let's think step by step</strong></p>
 <h3> <strong>CHATGPT</strong> </h3>
@@ -1066,7 +1065,7 @@ PREFIX cis: &lt;http://dati.beniculturali.it/cis/&gt;<br>
 
 ASK {<br>
   {<br>
-    &lt;https://dati.beniculturali.it/lodview/cis/Library.html&gt;<br>
+    &lt;http://dati.beniculturali.it/cis/Library&gt;<br>
         arco-core:isPartof<br>
     &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt; .<br>
   }<br>
@@ -1074,7 +1073,7 @@ ASK {<br>
   {<br>
     &lt;https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/0800262039&gt;<br>
         arco-core:hasPart<br>
-      &lt;https://dati.beniculturali.it/lodview/cis/Library.html&gt; .<br>
+      &lt;http://dati.beniculturali.it/cis/Library&gt; .<br>
   }<br>
 }</p><br>
 </blockquote>
