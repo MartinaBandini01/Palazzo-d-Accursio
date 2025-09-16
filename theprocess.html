@@ -726,11 +726,11 @@ In the RDF triple, I would like to have a descriptive label with the following d
 <h2 style="text-align: center;">COMMENTS ON THE 3 DIFFERENT TRIPLES AND BEHAVIOUR OF LLMS</h2>
 <br>
 <p>The first triple, proposed by <strong> ChatGPT </strong>, states that the building has a distinct physical object (DecorativeApparatus) identified by a URI. 
-It creates a distinct resource for the fresco and links it via core:hasPart. However, the IRI for fresco is written incorrectly: instead of using the correct 
-IRI given in the prompt: ChatGPT “invented” an incorrect IRI (https://w3id.org/arco/resource/DecorativeApparatus/0800262039-affresco), which was repeated twice, suggesting a hallucination.<br>
-The second model, stated by <strong>Mistral</strong>, uses a blank node ([...]) instead of a URI to represent the decorative apparatus. 
+It creates a distinct resource for the fresco and links it via core:hasPart. However, instead of using the correct IRI provided in the prompt, it generated a non-existent one 
+(https://w3id.org/arco/resource/DecorativeApparatus/0800262039-affresco). This invented IRI, repeated twice, indicates a case of hallucination.<br>
+The second model, stated by <strong>Mistral</strong>, uses a blank node ([...]) to represent the decorative apparatus. 
 Conceptually, it is very similar to the first case, but it does not assign a persistent identifier to the fresco: we cannot easily reuse or link this resource elsewhere. <br>
-In <strong>Gemini’s</strong> model, there is no longer a separate “fresco” resource. The building is directly linked to the type of decorative apparatus (fresco) via a property 
+In <strong>Gemini’s</strong> model, the building is directly linked to the type of decorative apparatus (fresco) via a property 
 (hasInternalDecorativeApparatusOrDecorativeCycle). However, this property is not part of the standard ArCo ontology, suggesting a looser interpretation or hallucination.</p>
 <br>
 <h2 style="text-align: center;">STATUE</h2> 
